@@ -1,0 +1,64 @@
+
+    <app-header></app-header>
+    <button class="btn-logout" (click)="logout()">Log Out</button>
+    <main>
+            <div class="card mb-4 main-container">
+                <div class="card-body">
+
+                    <!--Table-->
+                    <table class="table table-striped" *ngIf="jobs.length > 0">
+                        <!--Table head-->
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-center">Company</th>
+                                <th class="text-center">Position</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+                        <!--Table body-->
+                        <tbody>
+                            
+                            <tr *ngFor="let job of jobs; let i = index">
+                                <th>{{ i + 1}}</th>
+                                <td>{{ job.company }}</td>
+                                <td>{{ job.position }}</td>
+                                <td>
+                                    <div *ngIf="job.status === 'pending'" class="status-icon">
+                                        <i class="uil uil-fast-mail"></i>
+                                        <small>{{job.status}}</small>
+                                    </div>
+                                    <div *ngIf="job.status === 'interview'" class="status-icon">
+                                        <i  class="uil uil-users-alt"></i>
+                                        <small>{{job.status}}</small>
+                                    </div>
+                                    <div *ngIf="job.status === 'declined'" class="status-icon">
+                                        <i  class="uil uil-user-times"></i>
+                                        <small>{{job.status}}</small>
+                                    </div>
+                                </td>
+                                <td class="action-buttons">
+                                    <i class="uil uil-edit-alt" (click)="editJob(job._id)"></i>
+                                    <i class="uil uil-trash-alt" (click)="deleteJob(job._id)"></i>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+            
+                    </table>
+                    <!--Table-->
+                    <div *ngIf="jobs.length === 0">
+                        <h1 >You haven't create any jobs yet.</h1>
+                        <button (click)="createJob()">Create</button>
+                    </div>
+
+                    <div *ngIf="displayModal">
+                        <app-modal-jobs [isEdit]="isEdit" [id]="selectJob"></app-modal-jobs>
+                    </div>
+
+                </div>
+            </div>
+    </main>
+

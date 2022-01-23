@@ -1,0 +1,39 @@
+section {
+    height: 100%;
+}
+
+.home-container {
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+}
+
+.home-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container div > h1 {
+    font-size: 3rem;
+}
+
+.home-container div > p {
+    padding: 35px;
+}
+
+.login-btn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: var(--main-color-dark);
+    color: var(--main-color-light);
+    text-decoration: none;
+}
+
+.home-image {
+    width: 45vw;
+    padding: 10px;
+    margin-right: 20px;
+}

@@ -1,0 +1,24 @@
+<!-- fadeInDown -->
+<div class="wrapper">
+    <div id="formContent">
+
+      <div class="fadeIn first">
+          <img src="assets/images/Logo.png" id="icon" alt="User Icon" />
+      </div>
+
+      <h2 [ngClass]="classSignIn" (click)="signInForm()"> Sign In </h2>
+      <h2 [ngClass]="classSignUp" (click)="signUpForm()">Sign Up </h2>
+  
+      <!-- Login Form -->
+      <form autocomplete="off" 
+            class="animate__animated animate__fadeIn" 
+            [formGroup]="authForm">
+        <input type="text" *ngIf="register" formControlName='name' placeholder="name">
+        <input type="text" id="login" placeholder="email" formControlName='email'>
+        <input type="password" id="password" placeholder="password" formControlName='password'>
+        <button type="submit" (click)="logIn()" *ngIf="!register">Log In</button>
+        <button type="submit" (click)="createUser()" *ngIf="register">Sign Up</button>
+      </form>
+      <a routerLink="/home">&larr; Go Back</a>
+    </div>
+  </div>

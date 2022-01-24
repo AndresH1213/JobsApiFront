@@ -3,6 +3,7 @@ section {
 }
 
 .home-container {
+    margin-top: 20px;
     display: flex;
     height: 60vh;
     justify-content: center;
@@ -15,8 +16,13 @@ section {
     align-items: center;
 }
 
-.home-container div > h1 {
+.svg-image {
+    display: none;
+}
+
+.title {
     font-size: 3rem;
+    font-weight: 500;
 }
 
 .home-container div > p {
@@ -36,4 +42,38 @@ section {
     width: 45vw;
     padding: 10px;
     margin-right: 20px;
+}
+
+@media only screen and (max-width: 650px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .home-container div > p {
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .home-image {
+        display: none;
+    }
+    .home-container div {
+        height: 90vh;
+        justify-content: space-between;
+    }
+
+    .home-container div > p {
+        padding: 5px;
+    }
+
+    .svg-image {
+        display: block;
+        position: absolute;
+        top: 20%;
+        right: 5%;
+    }
 }

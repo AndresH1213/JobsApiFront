@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Job } from 'src/app/interfaces/jobs.interface';
 import { JobService } from 'src/app/services/job.service';
 import Swal from 'sweetalert2';
@@ -19,6 +20,7 @@ export class DashboardComponent implements OnInit {
 
   public test: boolean = false;
   constructor(private jobService: JobService,
+              private router: Router,
               private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -26,7 +28,6 @@ export class DashboardComponent implements OnInit {
   }
 
   getAllJobs() {
-    console.log('hey')
     this.jobService.getAllJobs().subscribe((data:any) => {
       this.jobs = data.jobs;
     })
@@ -34,6 +35,7 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.authService.logOut();
+    this.router.navigateByUrl('/home')
   }
 
   createJob() {

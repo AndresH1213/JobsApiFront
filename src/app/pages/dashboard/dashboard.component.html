@@ -3,7 +3,7 @@
     <button class="btn-logout" (click)="logout()">Log Out</button>
     <main>
             <div class="card mb-4">
-                <div class="card-body container">
+                <div class="card-body container animate__animated animate__fadeIn">
                     <button class="create-button" (click)="createJob()">Create</button>
                     <!--Table-->
                     <table class="table table-striped" *ngIf="jobs.length > 0">
@@ -50,8 +50,7 @@
                     </table>
                     <!--Table-->
                     <div *ngIf="jobs.length === 0">
-                        <h1 >You haven't create any jobs yet.</h1>
-                        <button (click)="createJob()">Create</button>
+                        <h2 >You haven't create any jobs yet. Create one.</h2>
                     </div>
 
                     <div *ngIf="displayModal">

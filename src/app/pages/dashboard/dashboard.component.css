@@ -2,7 +2,7 @@ main {
     width: 55%;
     height: max-content;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .main-container {
@@ -73,12 +73,15 @@ footer {
     text-align:center;
     background-color: var(--main-color-dark);
     color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 footer a {
-color: var(--second-color-light);
-font-weight: 500;
-text-decoration: none;
+    color: var(--second-color-light);
+    font-weight: 500;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 650px) {

@@ -1,9 +1,23 @@
-<p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
-    [draggable]="false" [resizable]="false">
-    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p-dialog header="{{isEdit ? 'Update Product' : 'Create Product'}}" 
+        [(visible)]="displayModal" 
+        [modal]="true" 
+        [style]="{width: '50vw'}"
+        [draggable]="false"
+        [closable]="false" 
+        [resizable]="false">
+        <i class="uil uil-x close-icon" (click)="closeModal()"></i>
+        <div *ngIf="showError" class="error-message">
+            Please fill all the fields
+        </div>
+    <form [formGroup]="formJobs" autocomplete="off">
+        <input type="text" formControlName='company' placeholder="Company">
+        <input type="text" formControlName='position' placeholder="Position">
+        <select formControlName='status' id="">
+            <option *ngFor="let state of statusOptions"
+                    value="{{state}}">{{ state | titlecase }}</option>
+        </select>
+    </form>
         <ng-template pTemplate="footer">
-        <p-button (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+        <p-button (click)="updateCreateJob()" label="{{isEdit ? 'Update' : 'Create'}}" styleClass="p-button-text"></p-button>
         </ng-template>
 </p-dialog>

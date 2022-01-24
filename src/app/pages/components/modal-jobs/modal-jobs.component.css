@@ -1,0 +1,18 @@
+.error-message {
+    width: fit-content;
+    padding: 0 10px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-color: rgb(255, 71, 71, 0.2);
+    border: 2px rgb(255, 71, 71) solid;
+    color: rgb(255, 71, 71);
+    border-radius: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}

@@ -46,7 +46,7 @@ export class JobService {
 
   deleteJob(id: string) {
     const url = `${this.baseUrl}/jobs/${id}`;
-    return this.http.delete(url);
+    return this.http.delete(url, this.getHeaders);
   }
 
 }

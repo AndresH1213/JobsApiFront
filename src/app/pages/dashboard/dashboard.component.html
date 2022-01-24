@@ -3,8 +3,8 @@
     <button class="btn-logout" (click)="logout()">Log Out</button>
     <main>
             <div class="card mb-4 main-container">
-                <div class="card-body">
-
+                <div class="card-body container">
+                    <button class="create-button" (click)="createJob()">Create</button>
                     <!--Table-->
                     <table class="table table-striped" *ngIf="jobs.length > 0">
                         <!--Table head-->
@@ -41,7 +41,7 @@
                                 </td>
                                 <td class="action-buttons">
                                     <i class="uil uil-edit-alt" (click)="editJob(job._id)"></i>
-                                    <i class="uil uil-trash-alt" (click)="deleteJob(job._id)"></i>
+                                    <i class="uil uil-trash-alt" (click)="deleteJob(job._id, job.company)"></i>
                                 </td>
                             </tr>
                             
@@ -55,9 +55,13 @@
                     </div>
 
                     <div *ngIf="displayModal">
-                        <app-modal-jobs [isEdit]="isEdit" [id]="selectJob"></app-modal-jobs>
+                        <app-modal-jobs [isEdit]="isEdit" 
+                                        [job]="selectJob" 
+                                        [displayModal]="displayModal" 
+                                        (loadJobs)="getAllJobs()"
+                                        (isDisplayed)="displayModal = $event"
+                                        ></app-modal-jobs>
                     </div>
-
                 </div>
             </div>
     </main>

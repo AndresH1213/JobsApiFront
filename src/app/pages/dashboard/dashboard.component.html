@@ -2,7 +2,7 @@
     <app-header></app-header>
     <button class="btn-logout" (click)="logout()">Log Out</button>
     <main>
-            <div class="card mb-4 main-container">
+            <div class="card mb-4">
                 <div class="card-body container">
                     <button class="create-button" (click)="createJob()">Create</button>
                     <!--Table-->
@@ -10,7 +10,7 @@
                         <!--Table head-->
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th class="num-column">#</th>
                                 <th class="text-center">Company</th>
                                 <th class="text-center">Position</th>
                                 <th>Status</th>
@@ -22,7 +22,7 @@
                         <tbody>
                             
                             <tr *ngFor="let job of jobs; let i = index">
-                                <th>{{ i + 1}}</th>
+                                <th class="num-column">{{ i + 1}}</th>
                                 <td>{{ job.company }}</td>
                                 <td>{{ job.position }}</td>
                                 <td>
@@ -65,4 +65,8 @@
                 </div>
             </div>
     </main>
+
+    <footer>
+        Made by <a href="https://www.github.com/AndresH1213">AndresHernandez</a>
+    </footer>
 

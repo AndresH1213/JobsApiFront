@@ -12,12 +12,14 @@
     <form [formGroup]="formJobs" autocomplete="off">
         <input type="text" formControlName='company' placeholder="Company">
         <input type="text" formControlName='position' placeholder="Position">
-        <select formControlName='status' id="">
+        <select formControlName='status' class="form-control">
             <option *ngFor="let state of statusOptions"
                     value="{{state}}">{{ state | titlecase }}</option>
         </select>
     </form>
         <ng-template pTemplate="footer">
-        <p-button (click)="updateCreateJob()" label="{{isEdit ? 'Update' : 'Create'}}" styleClass="p-button-text"></p-button>
+        <button (click)="updateCreateJob()" class="p-button-text">
+            {{isEdit ? 'Update' : 'Create'}}
+        </button>
         </ng-template>
 </p-dialog>

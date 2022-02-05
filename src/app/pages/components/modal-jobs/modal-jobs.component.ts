@@ -22,8 +22,8 @@ export class ModalJobsComponent implements OnInit {
   public showError: boolean = false
 
   formJobs: FormGroup = this.fb.group({
-    company: ['Ikea', Validators.required],
-    position: ['Cloud Manager', [Validators.required, Validators.minLength(4)]],
+    company: ['', Validators.required],
+    position: ['', [Validators.required, Validators.minLength(4)]],
     status: ['declined', Validators.required]
   })
 

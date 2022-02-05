@@ -1,7 +1,7 @@
 <p-dialog header="{{isEdit ? 'Update Product' : 'Create Product'}}" 
         [(visible)]="displayModal" 
         [modal]="true" 
-        [style]="{width: '50vw'}"
+        [style]="{width: '40vw'}"
         [draggable]="false"
         [closable]="false" 
         [resizable]="false">
@@ -10,12 +10,21 @@
             Please fill all the fields
         </div>
     <form [formGroup]="formJobs" autocomplete="off">
-        <input type="text" formControlName='company' placeholder="Company">
-        <input type="text" formControlName='position' placeholder="Position">
-        <select formControlName='status' class="form-control">
-            <option *ngFor="let state of statusOptions"
-                    value="{{state}}">{{ state | titlecase }}</option>
-        </select>
+        <div class="form-controls">
+            <label for="company">Company</label>
+            <input type="text" formControlName='company' placeholder="Company">
+        </div>
+        <div class="form-controls">
+            <label for="positino">Position</label>
+            <input type="text" formControlName='position' placeholder="Position">
+        </div>
+        <div class="form-controls">
+            <label for="status">Status</label>
+            <select formControlName='status' class="form-control">
+                <option *ngFor="let state of statusOptions"
+                        value="{{state}}">{{ state | titlecase }}</option>
+            </select>
+        </div>
     </form>
         <ng-template pTemplate="footer">
         <button (click)="updateCreateJob()" class="p-button-text">

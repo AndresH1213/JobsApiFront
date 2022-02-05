@@ -2,15 +2,15 @@
     <app-header></app-header>
     <button class="btn-logout" (click)="logout()">Log Out</button>
     <main>
-            <div class="card mb-4 main-container">
-                <div class="card-body container">
+            <div class="card mb-4">
+                <div class="card-body container animate__animated animate__fadeIn">
                     <button class="create-button" (click)="createJob()">Create</button>
                     <!--Table-->
                     <table class="table table-striped" *ngIf="jobs.length > 0">
                         <!--Table head-->
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th class="num-column">#</th>
                                 <th class="text-center">Company</th>
                                 <th class="text-center">Position</th>
                                 <th>Status</th>
@@ -22,7 +22,7 @@
                         <tbody>
                             
                             <tr *ngFor="let job of jobs; let i = index">
-                                <th>{{ i + 1}}</th>
+                                <th class="num-column">{{ i + 1}}</th>
                                 <td>{{ job.company }}</td>
                                 <td>{{ job.position }}</td>
                                 <td>
@@ -50,8 +50,7 @@
                     </table>
                     <!--Table-->
                     <div *ngIf="jobs.length === 0">
-                        <h1 >You haven't create any jobs yet.</h1>
-                        <button (click)="createJob()">Create</button>
+                        <h2 >You haven't create any jobs yet. Create one.</h2>
                     </div>
 
                     <div *ngIf="displayModal">
@@ -65,4 +64,8 @@
                 </div>
             </div>
     </main>
+
+    <footer>
+        Made by <a href="https://www.github.com/AndresH1213">AndresHernandez</a>
+    </footer>
 

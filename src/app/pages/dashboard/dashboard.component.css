@@ -5,12 +5,21 @@ main {
     margin-top: 2%;
 }
 
-.main-container {
+td {
+    padding: 6px;
+}
+
+.card-body {
     display: flex;
     width: 100%;
     height: max-content;
     justify-content: center;
     align-items: center;
+}
+
+.status-column {
+    padding: 2px;
+    padding-bottom: 0px;
 }
 
 .status-icon {
@@ -21,7 +30,7 @@ main {
 }
 
 .status-icon i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--second-color-dark);
     padding: 0;
 }
@@ -32,6 +41,10 @@ main {
     transform: translateY(-8px);
     font-size: 0.5rem;
 }
+
+.blue {color: var(--main-color-dark);}
+.red {color: var(--second-color-light);}
+.green {color: teal;}
 
 .container {
     display: flex;

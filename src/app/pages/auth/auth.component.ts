@@ -18,8 +18,8 @@ export class AuthComponent implements OnInit {
 
   authForm: FormGroup = this.fb.group({
     name: [''],
-    email: ['test@test.com', [Validators.required, Validators.email] ],
-    password: ['holamundo', [Validators.required] ]
+    email: ['', [Validators.required, Validators.email] ],
+    password: ['', [Validators.required] ]
   })
 
   constructor(private fb: FormBuilder,
